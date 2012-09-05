@@ -7,7 +7,12 @@ let mapleader = ","
 let maplocalleader = "\\"
 set wildmenu
 set wildmode=list:longest,full
-set autowriteall
+" set autowriteall
+
+call pathogen#infect()
+" autocmd vimenter * NERDTree
+map <F2> :NERDTreeToggle<CR>
+map <F3> :TagbarToggle<CR>
 
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-S> :call <SID>SynStack()<CR>
@@ -186,7 +191,7 @@ set smartcase " Ignore case when searching lowercase
 " Colors **********************************************************************
 "set t_Co=256 " 256 colors
 syntax on " syntax highlighting
-colorscheme camouflage
+colorscheme ir_black
 
 " Status Line *****************************************************************
 set showcmd
@@ -232,7 +237,7 @@ autocmd FileType html set filetype=xhtml " we couldn't care less about html
 
 " Inser New Line **************************************************************
 map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode
-map <Enter> o<ESC>
+"map <Enter> o<ESC>
 set fo-=r " do not insert a comment leader after an enter, (no work, fix!!)
 
 " Sessions ********************************************************************
@@ -370,8 +375,8 @@ let my_ctrlp_git_command = "" .
 
 let g:ctrlp_user_command = ['.git/', my_ctrlp_git_command, my_ctrlp_user_command]
 
-nnoremap <leader>t :CtrlPTag<cr>
-nnoremap <leader>b :CtrlPBuffer<cr>
+"nnoremap <leader>t :CtrlPTag<cr>
+"nnoremap <leader>b :CtrlPBuffer<cr>
 
 " Rainbow Parentheses *********************************************************
 
@@ -494,3 +499,10 @@ syntax enable
 filetype plugin on
 set ofu=syntaxcomplete#Complete
 
+" Ruby
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+"improve autocomplete menu color
+highlight Pmenu ctermbg=238 gui=bold
