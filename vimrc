@@ -12,7 +12,6 @@ set wildmode=list:longest,full
 call pathogen#infect()
 " autocmd vimenter * NERDTree
 map <F2> :NERDTreeToggle<CR>
-map <F3> :TagbarToggle<CR>
 
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-S> :call <SID>SynStack()<CR>
@@ -62,8 +61,8 @@ nmap <silent> <unique> <leader>W :wa<CR>
 nmap <silent> <unique> <leader>x "*x
 nmap <silent> <unique> <leader>p "*p
 nmap <silent> <unique> <C-S-Down> :A<CR>
-nmap <silent> <unique> <Space> <PageDown>
-nmap <silent> <unique> <S-Space> <PageUp>
+" nmap <silent> <unique> <Space> <PageDown>
+" nmap <silent> <unique> <S-Space> <PageUp>
 nmap <silent> <unique> <C-S-Left> <C-o>
 nmap <silent> <unique> <C-S-Right> <C-i>
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
@@ -183,15 +182,16 @@ set cursorline
 
 " Searching *******************************************************************
 set hlsearch " highlight search
-nmap <silent><unique> <C-esc> :nohl<cr>
+nmap <silent><unique><leader><esc> :nohl<cr>
 set incsearch " incremental search, search as you type
 set ignorecase " Ignore case when searching
 set smartcase " Ignore case when searching lowercase
 
 " Colors **********************************************************************
-"set t_Co=256 " 256 colors
+set t_Co=256 " 256 colors
 syntax on " syntax highlighting
-colorscheme ir_black
+""colorscheme ir_black
+colorscheme Tomorrow-Night
 
 " Status Line *****************************************************************
 set showcmd
@@ -225,6 +225,10 @@ imap aa @
 
 " File Stuff ******************************************************************
 filetype plugin indent on
+
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
 " To show current filetype use: set filetype
 
 " Remember last location in file
@@ -506,3 +510,8 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
+
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+let Tlist_WinWidth = 40
+"map <F3> :TlistToggle<cr>
+map <F3> :TagbarToggle<CR>
