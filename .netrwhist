@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/efmiglioranza/dev/ruby/tests'
+let g:netrw_dirhist_2='/home/efmiglioranza/dev/ruby/dmtest/lib/framework/testcase'
+let g:netrw_dirhist_3='/home/efmiglioranza/dev/ruby/dmtest/test/unit'
+let g:netrw_dirhist_4='/home/efmiglioranza/dev/ruby/dmtest/lib/framework/logator_exporter'
+let g:netrw_dirhist_5='/home/efmiglioranza/dev/ruby/dmtest/lib/environment_simulation'
+let g:netrw_dirhist_6='/home/efmiglioranza/.vim/bundle'
+let g:netrw_dirhist_7='/home/efmiglioranza/dev/ruby/dmtest/test/unit/dmtest-config'
+let g:netrw_dirhist_8='/home/efmiglioranza/dev/ruby/dmtest/test/unit/dmtest-config/config'
+let g:netrw_dirhist_9='/home/efmiglioranza/dev/ruby/dmtest/lib/framework/switch_selector'
